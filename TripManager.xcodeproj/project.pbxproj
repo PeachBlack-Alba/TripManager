@@ -15,6 +15,7 @@
 		764C694C2C2425DD0077F29D /* TripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C694B2C2425DD0077F29D /* TripManagerUITests.swift */; };
 		764C694E2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */; };
 		764C69612C2438210077F29D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69602C2438210077F29D /* Trip.swift */; };
+		764C69632C2438F10077F29D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69622C2438F10077F29D /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		764C694B2C2425DD0077F29D /* TripManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITests.swift; sourceTree = "<group>"; };
 		764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		764C69602C2438210077F29D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		764C69622C2438F10077F29D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		764C695F2C2435150077F29D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				764C69622C2438F10077F29D /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			files = (
 				764C69612C2438210077F29D /* Trip.swift in Sources */,
 				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
+				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,
 				764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
