@@ -21,6 +21,8 @@
 		764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696A2C2442920077F29D /* TripListInteractor.swift */; };
 		764C696D2C2443760077F29D /* TripsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696C2C2443760077F29D /* TripsListRouter.swift */; };
 		764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */; };
+		764C69732C2474FB0077F29D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69722C2474FB0077F29D /* MapViewModel.swift */; };
+		764C69752C24751E0077F29D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69742C24751E0077F29D /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		764C696A2C2442920077F29D /* TripListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractor.swift; sourceTree = "<group>"; };
 		764C696C2C2443760077F29D /* TripsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListRouter.swift; sourceTree = "<group>"; };
 		764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewWrapper.swift; sourceTree = "<group>"; };
+		764C69722C2474FB0077F29D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		764C69742C24751E0077F29D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				764C69602C2438210077F29D /* Trip.swift */,
+				764C69722C2474FB0077F29D /* MapViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			children = (
 				764C69682C243C9B0077F29D /* TripListProtocols.swift */,
 				764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */,
+				764C69742C24751E0077F29D /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				764C69612C2438210077F29D /* Trip.swift in Sources */,
+				764C69732C2474FB0077F29D /* MapViewModel.swift in Sources */,
 				764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */,
+				764C69752C24751E0077F29D /* MapView.swift in Sources */,
 				764C696D2C2443760077F29D /* TripsListRouter.swift in Sources */,
 				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
 				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,

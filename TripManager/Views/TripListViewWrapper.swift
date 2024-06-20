@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 class TripListViewWrapper: TripListViewProtocol, ObservableObject {
     var presenter: TripListPresenterProtocol?
 
     @Published var trips: [Trip] = []
+
+    var mapViewModel = MapViewModel()
 
     var contentView: some View {
         TripListView(viewModel: self)
@@ -20,6 +23,9 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
         print("ViewModel: showTrips - \(trips.count) trips")
         DispatchQueue.main.async {
             self.trips = trips
+            if let firstTrip = trips.first {
+                self.mapViewModel.updateRegion(for: firstTrip)
+            }
         }
     }
 }
@@ -29,19 +35,28 @@ struct TripListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.trips.indices, id: \.self) { index in
-                let trip = viewModel.trips[index]
-                VStack(alignment: .leading) {
-                    Text(trip.description)
-                        .font(.headline)
-                    Text("Driver: \(trip.driverName)")
-                        .font(.subheadline)
+            VStack {
+                MapView(viewModel: viewModel.mapViewModel)
+                    .frame(height: UIScreen.main.bounds.height / 2)
+
+                List(viewModel.trips.indices, id: \.self) { index in
+                    let trip = viewModel.trips[index]
+                    VStack(alignment: .leading) {
+                        Text(trip.description)
+                            .font(.headline)
+                        Text("Driver: \(trip.driverName)")
+                            .font(.subheadline)
+                        Text("Start: \(trip.startTime)")
+                            .font(.caption)
+                        Text("End: \(trip.endTime)")
+                            .font(.caption)
+                    }
                 }
-            }
-            .navigationBarTitle("Trips")
-            .onAppear {
-                print("View: onAppear")
-                viewModel.presenter?.viewDidLoad()
+                .navigationBarTitle("Trips")
+                .onAppear {
+                    print("View: onAppear")
+                    viewModel.presenter?.viewDidLoad()
+                }
             }
         }
     }
