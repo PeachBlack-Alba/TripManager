@@ -14,6 +14,7 @@
 		764C69422C2425DD0077F29D /* TripManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69412C2425DD0077F29D /* TripManagerTests.swift */; };
 		764C694C2C2425DD0077F29D /* TripManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C694B2C2425DD0077F29D /* TripManagerUITests.swift */; };
 		764C694E2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */; };
+		764C69612C2438210077F29D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69602C2438210077F29D /* Trip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		764C69472C2425DD0077F29D /* TripManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		764C694B2C2425DD0077F29D /* TripManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITests.swift; sourceTree = "<group>"; };
 		764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		764C69602C2438210077F29D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,12 @@
 		764C692F2C2425DB0077F29D /* TripManager */ = {
 			isa = PBXGroup;
 			children = (
+				764C695F2C2435150077F29D /* Network */,
+				764C695E2C24350D0077F29D /* Routers  */,
+				764C695D2C2435060077F29D /* Presenters */,
+				764C695C2C2434FD0077F29D /* Interactors */,
+				764C695B2C2434F00077F29D /* Views */,
+				764C695A2C2434E70077F29D /* Models */,
 				764C69302C2425DB0077F29D /* TripManagerApp.swift */,
 				764C69322C2425DB0077F29D /* ContentView.swift */,
 				764C69342C2425DC0077F29D /* Assets.xcassets */,
@@ -125,6 +133,49 @@
 				764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */,
 			);
 			path = TripManagerUITests;
+			sourceTree = "<group>";
+		};
+		764C695A2C2434E70077F29D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				764C69602C2438210077F29D /* Trip.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		764C695B2C2434F00077F29D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		764C695C2C2434FD0077F29D /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		764C695D2C2435060077F29D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		764C695E2C24350D0077F29D /* Routers  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Routers ";
+			sourceTree = "<group>";
+		};
+		764C695F2C2435150077F29D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764C69612C2438210077F29D /* Trip.swift in Sources */,
 				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
 				764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */,
 			);
