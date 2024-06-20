@@ -19,6 +19,7 @@
 		764C69652C243B910077F29D /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69642C243B910077F29D /* TripsListView.swift */; };
 		764C69672C243C310077F29D /* TripListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69662C243C310077F29D /* TripListPresenter.swift */; };
 		764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69682C243C9B0077F29D /* TripListProtocols.swift */; };
+		764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696A2C2442920077F29D /* TripListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		764C69642C243B910077F29D /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
 		764C69662C243C310077F29D /* TripListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListPresenter.swift; sourceTree = "<group>"; };
 		764C69682C243C9B0077F29D /* TripListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListProtocols.swift; sourceTree = "<group>"; };
+		764C696A2C2442920077F29D /* TripListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		764C695C2C2434FD0077F29D /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				764C696A2C2442920077F29D /* TripListInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				764C69612C2438210077F29D /* Trip.swift in Sources */,
+				764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */,
 				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
 				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,
 				764C69672C243C310077F29D /* TripListPresenter.swift in Sources */,
