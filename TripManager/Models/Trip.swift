@@ -8,7 +8,6 @@
 import Foundation
 
 struct Trip: Codable {
-    let id: Int
     let driverName: String
     let startTime: String
     let endTime: String
@@ -28,9 +27,14 @@ struct Location: Codable {
 struct Point: Codable {
     let latitude: Double
     let longitude: Double
+
+    enum CodingKeys: String, CodingKey {
+        case latitude = "_latitude"
+        case longitude = "_longitude"
+    }
 }
 
 struct Stop: Codable {
-    let id: Int
-    let point: Point
+    let id: Int?
+    let point: Point?
 }

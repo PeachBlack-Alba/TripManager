@@ -5,7 +5,6 @@
 //  Created by Alba Torres Rodriguez on 20.06.24.
 //
 
-import Foundation
 import SwiftUI
 
 class TripListViewWrapper: TripListViewProtocol, ObservableObject {
@@ -30,7 +29,8 @@ struct TripListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.trips, id: \.id) { trip in
+            List(viewModel.trips.indices, id: \.self) { index in
+                let trip = viewModel.trips[index]
                 VStack(alignment: .leading) {
                     Text(trip.description)
                         .font(.headline)
