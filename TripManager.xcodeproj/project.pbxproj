@@ -16,11 +16,11 @@
 		764C694E2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */; };
 		764C69612C2438210077F29D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69602C2438210077F29D /* Trip.swift */; };
 		764C69632C2438F10077F29D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69622C2438F10077F29D /* NetworkService.swift */; };
-		764C69652C243B910077F29D /* TripsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69642C243B910077F29D /* TripsListView.swift */; };
 		764C69672C243C310077F29D /* TripListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69662C243C310077F29D /* TripListPresenter.swift */; };
 		764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69682C243C9B0077F29D /* TripListProtocols.swift */; };
 		764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696A2C2442920077F29D /* TripListInteractor.swift */; };
 		764C696D2C2443760077F29D /* TripsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696C2C2443760077F29D /* TripsListRouter.swift */; };
+		764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,11 +53,11 @@
 		764C694D2C2425DD0077F29D /* TripManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		764C69602C2438210077F29D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		764C69622C2438F10077F29D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		764C69642C243B910077F29D /* TripsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListView.swift; sourceTree = "<group>"; };
 		764C69662C243C310077F29D /* TripListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListPresenter.swift; sourceTree = "<group>"; };
 		764C69682C243C9B0077F29D /* TripListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListProtocols.swift; sourceTree = "<group>"; };
 		764C696A2C2442920077F29D /* TripListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractor.swift; sourceTree = "<group>"; };
 		764C696C2C2443760077F29D /* TripsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListRouter.swift; sourceTree = "<group>"; };
+		764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +158,8 @@
 		764C695B2C2434F00077F29D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				764C69642C243B910077F29D /* TripsListView.swift */,
 				764C69682C243C9B0077F29D /* TripListProtocols.swift */,
+				764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,8 +332,8 @@
 				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
 				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,
 				764C69672C243C310077F29D /* TripListPresenter.swift in Sources */,
-				764C69652C243B910077F29D /* TripsListView.swift in Sources */,
 				764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */,
+				764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */,
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

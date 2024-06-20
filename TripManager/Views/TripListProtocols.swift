@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit 
+import SwiftUI
 
 protocol TripListViewProtocol: AnyObject {
     var presenter: TripListPresenterProtocol? { get set }
@@ -31,5 +31,5 @@ protocol TripListInteractorOutputProtocol: AnyObject {
 }
 
 protocol TripListRouterProtocol: AnyObject {
-    static func createTripListModule() -> UIViewController
+    static func createTripListModule() -> AnyView
 }

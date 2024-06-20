@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import UIKit
+import SwiftUI
 
 class TripListRouter: TripListRouterProtocol {
-    static func createTripListModule() -> UIViewController {
-        let view = TripListView()
+    static func createTripListModule() -> AnyView {
+        var view = TripListViewWrapper()
         let presenter: TripListPresenterProtocol & TripListInteractorOutputProtocol = TripListPresenter()
         let interactor: TripListInteractorInputProtocol = TripListInteractor()
         let router: TripListRouterProtocol = TripListRouter()
@@ -21,7 +21,6 @@ class TripListRouter: TripListRouterProtocol {
         presenter.router = router
         interactor.presenter = presenter
 
-        return view
+        return AnyView(view.contentView)
     }
 }
-
