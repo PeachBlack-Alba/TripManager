@@ -18,7 +18,10 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
     }
 
     func showTrips(_ trips: [Trip]) {
-        self.trips = trips
+        print("ViewModel: showTrips - \(trips.count) trips")
+        DispatchQueue.main.async {
+            self.trips = trips
+        }
     }
 }
 
@@ -37,6 +40,7 @@ struct TripListView: View {
             }
             .navigationBarTitle("Trips")
             .onAppear {
+                print("View: onAppear")
                 viewModel.presenter?.viewDidLoad()
             }
         }

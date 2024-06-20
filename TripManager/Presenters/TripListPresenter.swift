@@ -13,16 +13,19 @@ class TripListPresenter: TripListPresenterProtocol {
     var router: TripListRouterProtocol?
 
     func viewDidLoad() {
+        print("Presenter: viewDidLoad")
         interactor?.fetchTrips()
     }
 }
 
 extension TripListPresenter: TripListInteractorOutputProtocol {
     func didFetchTrips(_ trips: [Trip]) {
+        print("Presenter: didFetchTrips - \(trips.count) trips")
         view?.showTrips(trips)
     }
 
     func didFailToFetchTrips(error: Error) {
+        print("Presenter: didFailToFetchTrips - \(error)")
         // TODO: Handle error
     }
 }

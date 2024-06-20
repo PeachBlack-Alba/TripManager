@@ -10,7 +10,7 @@ import SwiftUI
 
 class TripListRouter: TripListRouterProtocol {
     static func createTripListModule() -> AnyView {
-        var view = TripListViewWrapper()
+        let view = TripListViewWrapper()
         let presenter: TripListPresenterProtocol & TripListInteractorOutputProtocol = TripListPresenter()
         let interactor: TripListInteractorInputProtocol = TripListInteractor()
         let router: TripListRouterProtocol = TripListRouter()

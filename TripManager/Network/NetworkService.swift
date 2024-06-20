@@ -14,17 +14,21 @@ class NetworkService {
         let url = URL(string: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/trips.json")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
+                print("Network Error: \(error)")
                 completion(.failure(error))
                 return
             }
             guard let data = data else {
+                print("No data received")
                 completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data"])))
                 return
             }
             do {
                 let trips = try JSONDecoder().decode([Trip].self, from: data)
+                print("Trips fetched successfully: \(trips.count)")
                 completion(.success(trips))
             } catch {
+                print("Decoding Error: \(error)")
                 completion(.failure(error))
             }
         }
