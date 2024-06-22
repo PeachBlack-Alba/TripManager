@@ -23,6 +23,14 @@
 		764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */; };
 		764C69732C2474FB0077F29D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69722C2474FB0077F29D /* MapViewModel.swift */; };
 		764C69752C24751E0077F29D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69742C24751E0077F29D /* MapView.swift */; };
+		764C697B2C2479F90077F29D /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C697A2C2479F90077F29D /* MockNetworkService.swift */; };
+		764C697D2C247A0C0077F29D /* MockTripListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C697C2C247A0C0077F29D /* MockTripListView.swift */; };
+		764C697F2C247A270077F29D /* MockTripListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C697E2C247A270077F29D /* MockTripListPresenter.swift */; };
+		764C69812C247A3A0077F29D /* MockTripListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69802C247A3A0077F29D /* MockTripListInteractor.swift */; };
+		764C69832C247A4C0077F29D /* MockTripListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69822C247A4C0077F29D /* MockTripListRouter.swift */; };
+		764C69852C247A610077F29D /* TripListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69842C247A610077F29D /* TripListPresenterTests.swift */; };
+		764C69872C247A7D0077F29D /* TripListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69862C247A7D0077F29D /* TripListInteractorTests.swift */; };
+		764C69892C247A9B0077F29D /* TripListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69882C247A9B0077F29D /* TripListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +70,14 @@
 		764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewWrapper.swift; sourceTree = "<group>"; };
 		764C69722C2474FB0077F29D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		764C69742C24751E0077F29D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		764C697A2C2479F90077F29D /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		764C697C2C247A0C0077F29D /* MockTripListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripListView.swift; sourceTree = "<group>"; };
+		764C697E2C247A270077F29D /* MockTripListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripListPresenter.swift; sourceTree = "<group>"; };
+		764C69802C247A3A0077F29D /* MockTripListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripListInteractor.swift; sourceTree = "<group>"; };
+		764C69822C247A4C0077F29D /* MockTripListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripListRouter.swift; sourceTree = "<group>"; };
+		764C69842C247A610077F29D /* TripListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListPresenterTests.swift; sourceTree = "<group>"; };
+		764C69862C247A7D0077F29D /* TripListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractorTests.swift; sourceTree = "<group>"; };
+		764C69882C247A9B0077F29D /* TripListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +153,10 @@
 		764C69402C2425DD0077F29D /* TripManagerTests */ = {
 			isa = PBXGroup;
 			children = (
+				764C69792C24799E0077F29D /* Mocks */,
+				764C69782C2479990077F29D /* ViewModelTests */,
+				764C69772C24798E0077F29D /* PresenterTests */,
+				764C69762C2479820077F29D /* InteractorTests */,
 				764C69412C2425DD0077F29D /* TripManagerTests.swift */,
 			);
 			path = TripManagerTests;
@@ -200,6 +220,42 @@
 				764C69622C2438F10077F29D /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		764C69762C2479820077F29D /* InteractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				764C69862C247A7D0077F29D /* TripListInteractorTests.swift */,
+			);
+			path = InteractorTests;
+			sourceTree = "<group>";
+		};
+		764C69772C24798E0077F29D /* PresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				764C69842C247A610077F29D /* TripListPresenterTests.swift */,
+			);
+			path = PresenterTests;
+			sourceTree = "<group>";
+		};
+		764C69782C2479990077F29D /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				764C69882C247A9B0077F29D /* TripListViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		764C69792C24799E0077F29D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				764C697A2C2479F90077F29D /* MockNetworkService.swift */,
+				764C697C2C247A0C0077F29D /* MockTripListView.swift */,
+				764C697E2C247A270077F29D /* MockTripListPresenter.swift */,
+				764C69802C247A3A0077F29D /* MockTripListInteractor.swift */,
+				764C69822C247A4C0077F29D /* MockTripListRouter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +406,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764C697B2C2479F90077F29D /* MockNetworkService.swift in Sources */,
+				764C69872C247A7D0077F29D /* TripListInteractorTests.swift in Sources */,
 				764C69422C2425DD0077F29D /* TripManagerTests.swift in Sources */,
+				764C697D2C247A0C0077F29D /* MockTripListView.swift in Sources */,
+				764C69832C247A4C0077F29D /* MockTripListRouter.swift in Sources */,
+				764C69812C247A3A0077F29D /* MockTripListInteractor.swift in Sources */,
+				764C69852C247A610077F29D /* TripListPresenterTests.swift in Sources */,
+				764C69892C247A9B0077F29D /* TripListViewModelTests.swift in Sources */,
+				764C697F2C247A270077F29D /* MockTripListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

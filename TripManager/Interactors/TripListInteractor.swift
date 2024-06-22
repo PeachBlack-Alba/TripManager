@@ -7,11 +7,17 @@
 
 import Foundation
 
+
 class TripListInteractor: TripListInteractorInputProtocol {
     weak var presenter: TripListInteractorOutputProtocol?
+    var networkService: NetworkService
+
+    init(networkService: NetworkService = .shared) {
+        self.networkService = networkService
+    }
 
     func fetchTrips() {
-        NetworkService.shared.fetchTrips { [weak self] result in
+        networkService.fetchTrips { [weak self] result in
             switch result {
             case .success(let trips):
                 print("Interactor received trips: \(trips.count)")
@@ -23,3 +29,4 @@ class TripListInteractor: TripListInteractorInputProtocol {
         }
     }
 }
+
