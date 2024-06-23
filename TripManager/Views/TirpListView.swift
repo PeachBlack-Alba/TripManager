@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 import MapKit
+import SwiftUI
 
 struct TripListView: View {
     @ObservedObject var viewModel: TripListViewWrapper
+    @State private var showContactForm = false
 
     var body: some View {
         NavigationView {
@@ -18,7 +20,8 @@ struct TripListView: View {
                 MapView(viewModel: viewModel.mapViewModel)
                     .frame(height: UIScreen.main.bounds.height / 2)
 
-                List(viewModel.trips) { trip in
+                List(viewModel.trips.indices, id: \.self) { index in
+                    let trip = viewModel.trips[index]
                     VStack(alignment: .leading) {
                         Text(trip.description)
                             .font(.headline)
@@ -30,24 +33,29 @@ struct TripListView: View {
                             .font(.caption)
                     }
                     .padding()
-                    .background(viewModel.selectedTrip?.id == trip.id ? Color.blue.opacity(0.3) : Color.clear)
+                    .background(viewModel.selectedTrip?.id == trip.id ? Color.blue.opacity(0.3) : Color.white)
                     .cornerRadius(8)
                     .onTapGesture {
                         viewModel.presenter?.didSelectTrip(trip)
                     }
                 }
                 .navigationBarTitle("Trips")
+                .navigationBarItems(trailing: Button(action: {
+                    showContactForm = true
+                }) {
+                    Image(systemName: "exclamationmark.bubble")
+                })
                 .onAppear {
                     print("View: onAppear")
                     viewModel.presenter?.viewDidLoad()
                 }
+                .sheet(isPresented: $showContactForm) {
+                    ContactFormRouter.createContactFormModule()
+                }
             }
+            // .overlay(
+            //     StopInfoView(stop: $viewModel.mapViewModel.selectedStop)
+            // )
         }
-    }
-}
-
-struct TripListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TripListRouter.createTripListModule()
     }
 }
