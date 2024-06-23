@@ -5,6 +5,7 @@
 //  Created by Alba Torres Rodriguez on 20.06.24.
 //
 
+
 import MapKit
 import SwiftUI
 
@@ -18,9 +19,11 @@ class MapViewModel: ObservableObject {
     @Published var annotations: [MKPointAnnotation] = []
 
     func updateRegion(for trip: Trip) {
-        guard let firstStop = trip.stops.first?.point else { return }
-        let center = CLLocationCoordinate2D(latitude: firstStop.latitude, longitude: firstStop.longitude)
-        region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        guard let coordinates = trip.decodedCoordinates else { return }
+        let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        let rect = polyline.boundingMapRect
+        let region = MKCoordinateRegion(rect)
+        self.region = region
     }
 
     func updatePolyline(for trip: Trip) {
@@ -28,6 +31,7 @@ class MapViewModel: ObservableObject {
         let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
         polylines = [polyline]
         updateAnnotations(for: trip)
+        updateRegion(for: trip)
     }
 
     func updateAnnotations(for trip: Trip) {
@@ -52,3 +56,4 @@ class MapViewModel: ObservableObject {
         annotations = newAnnotations
     }
 }
+

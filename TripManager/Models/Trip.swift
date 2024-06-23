@@ -2,8 +2,8 @@ import Foundation
 import Polyline
 import CoreLocation
 
-struct Trip: Codable {
-    let id: Int?
+struct Trip: Codable, Identifiable {
+    var id: Int?
     let driverName: String
     let startTime: String
     let endTime: String
@@ -16,6 +16,10 @@ struct Trip: Codable {
 
     var decodedCoordinates: [CLLocationCoordinate2D]? {
         return decodePolyline(route)
+    }
+
+    mutating func setId(_ id: Int) {
+        self.id = id
     }
 }
 

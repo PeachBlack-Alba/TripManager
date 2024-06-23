@@ -9,6 +9,9 @@ import SwiftUI
 import MapKit
 import SwiftUI
 
+import SwiftUI
+import MapKit
+
 class TripListViewWrapper: TripListViewProtocol, ObservableObject {
     var presenter: TripListPresenterProtocol?
 
@@ -39,4 +42,3 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
         }
     }
 }
-

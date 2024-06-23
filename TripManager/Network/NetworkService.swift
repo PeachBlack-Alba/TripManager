@@ -26,8 +26,11 @@ class NetworkService {
                 if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
                     print("JSON Response: \(json)")
                 }
-                let trips = try JSONDecoder().decode([Trip].self, from: data)
-                completion(.success(trips))
+                var decodedTrips = try JSONDecoder().decode([Trip].self, from: data)
+                for index in decodedTrips.indices {
+                    decodedTrips[index].setId(index)
+                }
+                completion(.success(decodedTrips))
             } catch {
                 print("Decoding Error: \(error)")
                 completion(.failure(error))

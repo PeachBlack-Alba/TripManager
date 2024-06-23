@@ -18,8 +18,7 @@ struct TripListView: View {
                 MapView(viewModel: viewModel.mapViewModel)
                     .frame(height: UIScreen.main.bounds.height / 2)
 
-                List(viewModel.trips.indices, id: \.self) { index in
-                    let trip = viewModel.trips[index]
+                List(viewModel.trips) { trip in
                     VStack(alignment: .leading) {
                         Text(trip.description)
                             .font(.headline)
@@ -30,6 +29,9 @@ struct TripListView: View {
                         Text("End: \(trip.endTime)")
                             .font(.caption)
                     }
+                    .padding()
+                    .background(viewModel.selectedTrip?.id == trip.id ? Color.blue.opacity(0.3) : Color.clear)
+                    .cornerRadius(8)
                     .onTapGesture {
                         viewModel.presenter?.didSelectTrip(trip)
                     }
