@@ -7,11 +7,13 @@
 
 import SwiftUI
 import MapKit
+import SwiftUI
 
 class TripListViewWrapper: TripListViewProtocol, ObservableObject {
     var presenter: TripListPresenterProtocol?
 
     @Published var trips: [Trip] = []
+    @Published var selectedTrip: Trip?
 
     var mapViewModel = MapViewModel()
 
@@ -28,7 +30,16 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
             }
         }
     }
+
+    func showTripOnMap(_ trip: Trip) {
+        DispatchQueue.main.async {
+            self.selectedTrip = trip
+            self.mapViewModel.updateRegion(for: trip)
+            self.mapViewModel.updatePolyline(for: trip)
+        }
+    }
 }
+
 
 struct TripListView: View {
     @ObservedObject var viewModel: TripListViewWrapper
@@ -50,6 +61,9 @@ struct TripListView: View {
                             .font(.caption)
                         Text("End: \(trip.endTime)")
                             .font(.caption)
+                    }
+                    .onTapGesture {
+                        viewModel.presenter?.didSelectTrip(trip)
                     }
                 }
                 .navigationBarTitle("Trips")

@@ -11,6 +11,7 @@ import SwiftUI
 protocol TripListViewProtocol: AnyObject {
     var presenter: TripListPresenterProtocol? { get set }
     func showTrips(_ trips: [Trip])
+    func showTripOnMap(_ trip: Trip)
 }
 
 protocol TripListPresenterProtocol: AnyObject {
@@ -18,6 +19,7 @@ protocol TripListPresenterProtocol: AnyObject {
     var interactor: TripListInteractorInputProtocol? { get set }
     var router: TripListRouterProtocol? { get set }
     func viewDidLoad()
+    func didSelectTrip(_ trip: Trip)
 }
 
 protocol TripListInteractorInputProtocol: AnyObject {

@@ -1,13 +1,9 @@
-//
-//  Trip.swift
-//  TripManager
-//
-//  Created by Alba Torres Rodriguez on 20.06.24.
-//
-
 import Foundation
+import Polyline
+import CoreLocation
 
 struct Trip: Codable {
+    let id: Int?
     let driverName: String
     let startTime: String
     let endTime: String
@@ -17,6 +13,10 @@ struct Trip: Codable {
     let origin: Location
     let destination: Location
     let stops: [Stop]
+
+    var decodedCoordinates: [CLLocationCoordinate2D]? {
+        return decodePolyline(route)
+    }
 }
 
 struct Location: Codable {

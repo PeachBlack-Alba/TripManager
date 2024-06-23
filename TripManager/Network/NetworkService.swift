@@ -5,6 +5,7 @@
 //  Created by Alba Torres Rodriguez on 20.06.24.
 //
 
+
 import Foundation
 
 class NetworkService {
@@ -14,18 +15,18 @@ class NetworkService {
         let url = URL(string: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/trips.json")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print("Network Error: \(error)")
                 completion(.failure(error))
                 return
             }
             guard let data = data else {
-                print("No data received")
                 completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data"])))
                 return
             }
             do {
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                    print("JSON Response: \(json)")
+                }
                 let trips = try JSONDecoder().decode([Trip].self, from: data)
-                print("Trips fetched successfully: \(trips.count)")
                 completion(.success(trips))
             } catch {
                 print("Decoding Error: \(error)")

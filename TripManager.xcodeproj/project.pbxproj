@@ -31,6 +31,8 @@
 		764C69852C247A610077F29D /* TripListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69842C247A610077F29D /* TripListPresenterTests.swift */; };
 		764C69872C247A7D0077F29D /* TripListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69862C247A7D0077F29D /* TripListInteractorTests.swift */; };
 		764C69892C247A9B0077F29D /* TripListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69882C247A9B0077F29D /* TripListViewModelTests.swift */; };
+		764C698C2C287BAF0077F29D /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 764C698B2C287BAF0077F29D /* Polyline */; };
+		764C698E2C28829C0077F29D /* TirpListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698D2C28829C0077F29D /* TirpListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		764C69842C247A610077F29D /* TripListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListPresenterTests.swift; sourceTree = "<group>"; };
 		764C69862C247A7D0077F29D /* TripListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractorTests.swift; sourceTree = "<group>"; };
 		764C69882C247A9B0077F29D /* TripListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModelTests.swift; sourceTree = "<group>"; };
+		764C698D2C28829C0077F29D /* TirpListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirpListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764C698C2C287BAF0077F29D /* Polyline in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +190,7 @@
 				764C69682C243C9B0077F29D /* TripListProtocols.swift */,
 				764C696E2C244E0C0077F29D /* TripListViewWrapper.swift */,
 				764C69742C24751E0077F29D /* MapView.swift */,
+				764C698D2C28829C0077F29D /* TirpListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +279,9 @@
 			dependencies = (
 			);
 			name = TripManager;
+			packageProductDependencies = (
+				764C698B2C287BAF0077F29D /* Polyline */,
+			);
 			productName = TripManager;
 			productReference = 764C692D2C2425DB0077F29D /* TripManager.app */;
 			productType = "com.apple.product-type.application";
@@ -346,6 +354,9 @@
 				Base,
 			);
 			mainGroup = 764C69242C2425DB0077F29D;
+			packageReferences = (
+				764C698A2C287BAF0077F29D /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
 			productRefGroup = 764C692E2C2425DB0077F29D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,6 +410,7 @@
 				764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */,
 				764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */,
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
+				764C698E2C28829C0077F29D /* TirpListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		764C698A2C287BAF0077F29D /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		764C698B2C287BAF0077F29D /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 764C698A2C287BAF0077F29D /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 764C69252C2425DB0077F29D /* Project object */;
 }
