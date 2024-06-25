@@ -12,6 +12,7 @@ protocol TripListViewProtocol: AnyObject {
     var presenter: TripListPresenterProtocol? { get set }
     func showTrips(_ trips: [Trip])
     func showTripOnMap(_ trip: Trip)
+    func showStopInfo(stopId: Int)
 }
 
 protocol TripListPresenterProtocol: AnyObject {
@@ -20,6 +21,7 @@ protocol TripListPresenterProtocol: AnyObject {
     var router: TripListRouterProtocol? { get set }
     func viewDidLoad()
     func didSelectTrip(_ trip: Trip)
+    func didSelectStop(_ stopId: Int)
 }
 
 protocol TripListInteractorInputProtocol: AnyObject {

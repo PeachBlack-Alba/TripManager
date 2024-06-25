@@ -11,13 +11,16 @@ import MapKit
 
 struct TripListView: View {
     @ObservedObject var viewModel: TripListViewWrapper
-    @State private var showContactForm = false
+    @State private var selectedStopId: IdentifiableInt?
 
     var body: some View {
         NavigationView {
             VStack {
-                MapView(viewModel: viewModel.mapViewModel)
+                MapView(viewModel: viewModel.mapViewModel, selectedStopId: $selectedStopId)
                     .frame(height: UIScreen.main.bounds.height / 2)
+                    .onTapGesture {
+                        selectedStopId = nil
+                    }
 
                 List(viewModel.trips.indices, id: \.self) { index in
                     let trip = viewModel.trips[index]
@@ -40,7 +43,7 @@ struct TripListView: View {
                 }
                 .navigationBarTitle("Trips")
                 .navigationBarItems(trailing: Button(action: {
-                    showContactForm = true
+                    viewModel.showContactForm = true
                 }) {
                     Image(systemName: "exclamationmark.bubble")
                 })
@@ -48,10 +51,24 @@ struct TripListView: View {
                     print("View: onAppear")
                     viewModel.presenter?.viewDidLoad()
                 }
-                .sheet(isPresented: $showContactForm) {
-                    ContactFormRouter.createContactFormModule(isPresented: $showContactForm)
+                .sheet(isPresented: $viewModel.showContactForm) {
+                    ContactFormRouter.createContactFormModule(isPresented: $viewModel.showContactForm)
+                }
+                .sheet(item: $selectedStopId) { stopId in
+                    StopInfoRouter.createModule(stopId: stopId.value)
                 }
             }
         }
     }
+}
+
+extension TripListView {
+    private func showStopInfo(stopId: Int) {
+        selectedStopId = IdentifiableInt(value: stopId)
+    }
+}
+
+struct IdentifiableInt: Identifiable {
+    let id = UUID()
+    let value: Int
 }

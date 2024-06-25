@@ -38,4 +38,26 @@ class NetworkService {
         }
         task.resume()
     }
+
+    func fetchStopInfo(completion: @escaping (Result<[StopInfo], Error>) -> Void) {
+        let url = URL(string: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/stops.json")!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data"])))
+                return
+            }
+            do {
+                let decodedStops = try JSONDecoder().decode([StopInfo].self, from: data)
+                completion(.success(decodedStops))
+            } catch {
+                print("Decoding Error: \(error)")
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
 }

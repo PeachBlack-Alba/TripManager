@@ -8,8 +8,6 @@
 import SwiftUI
 import MapKit
 import SwiftUI
-
-import SwiftUI
 import MapKit
 
 class TripListViewWrapper: TripListViewProtocol, ObservableObject {
@@ -17,6 +15,8 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
 
     @Published var trips: [Trip] = []
     @Published var selectedTrip: Trip?
+    @Published var showContactForm = false
+    @Published var selectedStopId: IdentifiableInt?
 
     var mapViewModel = MapViewModel()
 
@@ -39,6 +39,12 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
             self.selectedTrip = trip
             self.mapViewModel.updateRegion(for: trip)
             self.mapViewModel.updatePolyline(for: trip)
+        }
+    }
+
+    func showStopInfo(stopId: Int) {
+        DispatchQueue.main.async {
+            self.selectedStopId = IdentifiableInt(value: stopId)
         }
     }
 }

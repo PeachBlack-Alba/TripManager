@@ -19,6 +19,10 @@ class TripListPresenter: TripListPresenterProtocol {
     func didSelectTrip(_ trip: Trip) {
         view?.showTripOnMap(trip)
     }
+
+    func didSelectStop(_ stopId: Int) {
+        view?.showStopInfo(stopId: stopId)
+    }
 }
 
 extension TripListPresenter: TripListInteractorOutputProtocol {

@@ -9,6 +9,7 @@
 import MapKit
 import SwiftUI
 
+
 class MapViewModel: ObservableObject {
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 41.3851, longitude: 2.1734),
@@ -48,6 +49,7 @@ class MapViewModel: ObservableObject {
 
         for stop in trip.stops {
             guard let stopPoint = stop.point else { continue }
+          //  let stopAnnotation = StopAnnotation(stop: stop)
             let stopAnnotation = MKPointAnnotation()
             stopAnnotation.coordinate = CLLocationCoordinate2D(latitude: stopPoint.latitude, longitude: stopPoint.longitude)
             stopAnnotation.title = "Stop \(stop.id ?? 0)"
@@ -56,4 +58,16 @@ class MapViewModel: ObservableObject {
         annotations = newAnnotations
     }
 }
+
+class StopAnnotation: MKPointAnnotation {
+    var stop: StopInfo
+
+    init(stop: StopInfo) {
+        self.stop = stop
+        super.init()
+        self.coordinate = CLLocationCoordinate2D(latitude: stop.point.latitude, longitude: stop.point.longitude)
+        self.title = "Stop \(stop.id)"
+    }
+}
+
 
