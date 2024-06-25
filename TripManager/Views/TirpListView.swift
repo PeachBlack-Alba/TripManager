@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import MapKit
-import SwiftUI
 
 struct TripListView: View {
     @ObservedObject var viewModel: TripListViewWrapper
@@ -50,12 +49,9 @@ struct TripListView: View {
                     viewModel.presenter?.viewDidLoad()
                 }
                 .sheet(isPresented: $showContactForm) {
-                    ContactFormRouter.createContactFormModule()
+                    ContactFormRouter.createContactFormModule(isPresented: $showContactForm)
                 }
             }
-            // .overlay(
-            //     StopInfoView(stop: $viewModel.mapViewModel.selectedStop)
-            // )
         }
     }
 }

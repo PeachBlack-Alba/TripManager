@@ -43,6 +43,7 @@
 		764C69A02C28C1390077F29D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C699F2C28C1390077F29D /* LocalStorage.swift */; };
 		764C69A22C28C8BA0077F29D /* ContactFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69A12C28C8BA0077F29D /* ContactFormViewModel.swift */; };
 		764C69A42C28D4E90077F29D /* ContactFormViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */; };
+		76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B00BE02C298F790065FD24 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		764C699F2C28C1390077F29D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		764C69A12C28C8BA0077F29D /* ContactFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewModel.swift; sourceTree = "<group>"; };
 		764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewContainer.swift; sourceTree = "<group>"; };
+		76B00BE02C298F790065FD24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				764C69322C2425DB0077F29D /* ContentView.swift */,
 				764C69342C2425DC0077F29D /* Assets.xcassets */,
 				764C69362C2425DC0077F29D /* Preview Content */,
+				76B00BE02C298F790065FD24 /* AppDelegate.swift */,
 			);
 			path = TripManager;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				764C69962C28B3F30077F29D /* ContactFormPresenter.swift in Sources */,
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
 				764C698E2C28829C0077F29D /* TirpListView.swift in Sources */,
+				76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

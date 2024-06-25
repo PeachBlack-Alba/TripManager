@@ -9,14 +9,15 @@ import Foundation
 
 class LocalStorage {
     static let shared = LocalStorage()
-
     private let formsKey = "savedForms"
 
     func saveForm(_ form: ContactForm) throws {
         var forms = try loadForms()
-        forms.append(form)
-        let data = try JSONEncoder().encode(forms)
-        UserDefaults.standard.set(data, forKey: formsKey)
+        if !forms.contains(where: { $0.id == form.id }) {
+            forms.append(form)
+            let data = try JSONEncoder().encode(forms)
+            UserDefaults.standard.set(data, forKey: formsKey)
+        }
     }
 
     func loadForms() throws -> [ContactForm] {

@@ -8,9 +8,13 @@
 import Foundation
 import SwiftUI
 
+
 protocol ContactFormViewProtocol: AnyObject {
     var presenter: ContactFormPresenterProtocol? { get set }
     func showForm(_ form: ContactForm)
+    func showValidationError(message: String)
+    func showSubmissionSuccess()
+    func showSubmissionError(message: String)
 }
 
 protocol ContactFormPresenterProtocol: AnyObject {
@@ -33,5 +37,5 @@ protocol ContactFormInteractorOutputProtocol: AnyObject {
 }
 
 protocol ContactFormRouterProtocol: AnyObject {
-    static func createContactFormModule() -> AnyView
+    static func createContactFormModule(isPresented: Binding<Bool>) -> AnyView
 }

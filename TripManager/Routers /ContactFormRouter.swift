@@ -8,21 +8,18 @@
 import Foundation
 import SwiftUI
 
-
 class ContactFormRouter: ContactFormRouterProtocol {
-    static func createContactFormModule() -> AnyView {
-        let viewModel = ContactFormViewModel(presenter: ContactFormPresenter())
-        let viewWrapper = ContactFormViewWrapper(viewModel: viewModel)
-        let presenter: ContactFormPresenterProtocol & ContactFormInteractorOutputProtocol = ContactFormPresenter()
-        let interactor: ContactFormInteractorInputProtocol = ContactFormInteractor()
-        let router: ContactFormRouterProtocol = ContactFormRouter()
+    static func createContactFormModule(isPresented: Binding<Bool>) -> AnyView {
+        let presenter = ContactFormPresenter()
+        let viewModel = ContactFormViewModel(presenter: presenter)
+        let viewWrapper = ContactFormViewWrapper(viewModel: viewModel, isPresented: isPresented)
 
-        viewWrapper.presenter = presenter
+        let interactor = ContactFormInteractor()
         presenter.view = viewWrapper
         presenter.interactor = interactor
-        presenter.router = router
+        presenter.router = ContactFormRouter()
         interactor.presenter = presenter
 
-        return AnyView(ContactFormViewContainer(viewModel: viewModel))
+        return AnyView(ContactFormViewContainer(viewModel: viewModel, isPresented: isPresented))
     }
 }

@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ContactFormView: View {
     @ObservedObject var viewModel: ContactFormViewModel
+    @Binding var isPresented: Bool
 
     var body: some View {
         Form {
@@ -34,6 +35,7 @@ struct ContactFormView: View {
             }
 
             Button(action: {
+                print("Button pressed - Submitting form: \(viewModel.form)")
                 viewModel.presenter?.submitForm(viewModel.form)
             }) {
                 Text("Submit")
@@ -45,11 +47,13 @@ struct ContactFormView: View {
         .onAppear {
             viewModel.presenter?.viewDidLoad()
         }
-    }
-}
-
-struct ContactFormView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactFormView(viewModel: ContactFormViewModel(presenter: ContactFormPresenter()))
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
+        }
+        .onChange(of: viewModel.formSubmitted) { submitted in
+            if submitted {
+                isPresented = false
+            }
+        }
     }
 }
