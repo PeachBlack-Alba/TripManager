@@ -8,18 +8,19 @@
 import Foundation
 import SwiftUI
 
-class ContactFormRouter: ContactFormRouterProtocol {
-    static func createContactFormModule(isPresented: Binding<Bool>) -> AnyView {
-        let presenter = ContactFormPresenter()
-        let viewModel = ContactFormViewModel(presenter: presenter)
-        let viewWrapper = ContactFormViewWrapper(viewModel: viewModel, isPresented: isPresented)
 
-        let interactor = ContactFormInteractor()
-        presenter.view = viewWrapper
-        presenter.interactor = interactor
-        presenter.router = ContactFormRouter()
-        interactor.presenter = presenter
 
-        return AnyView(ContactFormViewContainer(viewModel: viewModel, isPresented: isPresented))
+class ContactFormRouter {
+    static func createContactFormModule(isPresented: Binding<Bool>, onSave: @escaping () -> Void) -> some View {
+        let viewModel = ContactFormViewModel(onSave: onSave)
+        let view = ContactFormView(isPresented: isPresented, viewModel: viewModel)
+        return NavigationView {
+            view
+                .navigationBarItems(leading: Button(action: {
+                    isPresented.wrappedValue = false
+                }) {
+                    Text("Close")
+                })
+        }
     }
 }

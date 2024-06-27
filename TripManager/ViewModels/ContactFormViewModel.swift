@@ -5,43 +5,66 @@
 //  Created by Alba Torres Rodriguez on 23.06.24.
 //
 import Foundation
+import UIKit
 
-class ContactFormViewModel: ObservableObject, ContactFormViewProtocol {
-    @Published var form: ContactForm
-    @Published var showAlert = false
-    @Published var alertMessage = ""
-    @Published var formSubmitted = false
+import Combine
 
-    var presenter: ContactFormPresenterProtocol?
 
-    init(presenter: ContactFormPresenterProtocol, form: ContactForm = ContactForm(name: "", surname: "", email: "", phone: "", reportDate: Date(), description: "")) {
-        self.presenter = presenter
-        self.form = form
+
+final class ContactFormViewModel: ObservableObject {
+    private var disposables = Set<AnyCancellable>()
+    let objectWillChange = PassthroughSubject<Void, Never>()
+    var onSave: () -> Void
+
+    @Published var name: String = "" {
+        didSet { validateForm() }
+    }
+    @Published var surname: String = "" {
+        didSet { validateForm() }
+    }
+    @Published var email: String = "" {
+        didSet { validateForm() }
+    }
+    @Published var phone: String = "" {
+        didSet { validateForm() }
+    }
+    @Published var details: String = "" {
+        didSet { validateForm() }
+    }
+    @Published var date: Date = Date()
+    @Published var saveDisabled: Bool = true
+
+    init(onSave: @escaping () -> Void) {
+        self.onSave = onSave
     }
 
-    func showForm(_ form: ContactForm) {
-        DispatchQueue.main.async {
-            self.form = form
+    func save() {
+        let report = Report(name: name, surname: surname, email: email, phone: phone.isEmpty ? nil : phone, details: details, date: date)
+        do {
+            print("Saving report: \(report)")
+            try LocalStorage.shared.saveForm(report)
+            LocalStorage.shared.printSavedReports()
+            updateBadge()
+            onSave()
+        } catch {
+            print("Error saving report: \(error)")
         }
     }
 
-    func showValidationError(message: String) {
-        DispatchQueue.main.async {
-            self.alertMessage = message
-            self.showAlert = true
+    private func updateBadge() {
+        do {
+            let reports = try LocalStorage.shared.loadForms()
+            DispatchQueue.main.async {
+                UIApplication.shared.applicationIconBadgeNumber = reports.count
+                print("Badge number updated to: \(reports.count)")
+            }
+        } catch {
+            print("Error updating badge: \(error)")
         }
     }
 
-    func showSubmissionSuccess() {
-        DispatchQueue.main.async {
-            self.formSubmitted = true
-        }
-    }
-
-    func showSubmissionError(message: String) {
-        DispatchQueue.main.async {
-            self.alertMessage = message
-            self.showAlert = true
-        }
+    private func validateForm() {
+        saveDisabled = name.isEmpty || surname.isEmpty || email.isEmpty || details.isEmpty || details.count > 200
+        objectWillChange.send()
     }
 }

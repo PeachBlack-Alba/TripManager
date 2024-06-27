@@ -10,6 +10,7 @@
 		7644A4242C2B09F40077A8A6 /* StopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4232C2B09F40077A8A6 /* StopInfo.swift */; };
 		7644A42C2C2B0CC20077A8A6 /* StopInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */; };
 		7644A4332C2B106D0077A8A6 /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4322C2B106D0077A8A6 /* TripListViewModel.swift */; };
+		7644A43F2C2DF7520077A8A6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A43E2C2DF7520077A8A6 /* BadgeView.swift */; };
 		764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69302C2425DB0077F29D /* TripManagerApp.swift */; };
 		764C69352C2425DC0077F29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764C69342C2425DC0077F29D /* Assets.xcassets */; };
 		764C69382C2425DC0077F29D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764C69372C2425DC0077F29D /* Preview Assets.xcassets */; };
@@ -35,7 +36,7 @@
 		764C69892C247A9B0077F29D /* TripListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69882C247A9B0077F29D /* TripListViewModelTests.swift */; };
 		764C698C2C287BAF0077F29D /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 764C698B2C287BAF0077F29D /* Polyline */; };
 		764C698E2C28829C0077F29D /* TirpListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698D2C28829C0077F29D /* TirpListView.swift */; };
-		764C69902C28B3A60077F29D /* ContactForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698F2C28B3A60077F29D /* ContactForm.swift */; };
+		764C69902C28B3A60077F29D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698F2C28B3A60077F29D /* Report.swift */; };
 		764C69922C28B3BF0077F29D /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69912C28B3BF0077F29D /* ContactFormView.swift */; };
 		764C69942C28B3D60077F29D /* ContactFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69932C28B3D60077F29D /* ContactFormInteractor.swift */; };
 		764C69962C28B3F30077F29D /* ContactFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69952C28B3F30077F29D /* ContactFormPresenter.swift */; };
@@ -69,6 +70,7 @@
 		7644A4232C2B09F40077A8A6 /* StopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfo.swift; sourceTree = "<group>"; };
 		7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoView.swift; sourceTree = "<group>"; };
 		7644A4322C2B106D0077A8A6 /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
+		7644A43E2C2DF7520077A8A6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		764C692D2C2425DB0077F29D /* TripManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764C69302C2425DB0077F29D /* TripManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerApp.swift; sourceTree = "<group>"; };
 		764C69342C2425DC0077F29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		764C69862C247A7D0077F29D /* TripListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListInteractorTests.swift; sourceTree = "<group>"; };
 		764C69882C247A9B0077F29D /* TripListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModelTests.swift; sourceTree = "<group>"; };
 		764C698D2C28829C0077F29D /* TirpListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirpListView.swift; sourceTree = "<group>"; };
-		764C698F2C28B3A60077F29D /* ContactForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactForm.swift; sourceTree = "<group>"; };
+		764C698F2C28B3A60077F29D /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		764C69912C28B3BF0077F29D /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
 		764C69932C28B3D60077F29D /* ContactFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormInteractor.swift; sourceTree = "<group>"; };
 		764C69952C28B3F30077F29D /* ContactFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormPresenter.swift; sourceTree = "<group>"; };
@@ -218,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				764C69602C2438210077F29D /* Trip.swift */,
-				764C698F2C28B3A60077F29D /* ContactForm.swift */,
+				764C698F2C28B3A60077F29D /* Report.swift */,
 				7644A4232C2B09F40077A8A6 /* StopInfo.swift */,
 			);
 			path = Models;
@@ -234,6 +236,7 @@
 				764C699C2C28B4600077F29D /* ContactFormViewWrapper.swift */,
 				764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */,
 				7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */,
+				7644A43E2C2DF7520077A8A6 /* BadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -474,7 +477,7 @@
 				764C69922C28B3BF0077F29D /* ContactFormView.swift in Sources */,
 				764C69942C28B3D60077F29D /* ContactFormInteractor.swift in Sources */,
 				7644A4242C2B09F40077A8A6 /* StopInfo.swift in Sources */,
-				764C69902C28B3A60077F29D /* ContactForm.swift in Sources */,
+				764C69902C28B3A60077F29D /* Report.swift in Sources */,
 				764C69672C243C310077F29D /* TripListPresenter.swift in Sources */,
 				764C69A22C28C8BA0077F29D /* ContactFormViewModel.swift in Sources */,
 				764C699D2C28B4600077F29D /* ContactFormViewWrapper.swift in Sources */,
@@ -486,6 +489,7 @@
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
 				7644A4332C2B106D0077A8A6 /* TripListViewModel.swift in Sources */,
 				764C698E2C28829C0077F29D /* TirpListView.swift in Sources */,
+				7644A43F2C2DF7520077A8A6 /* BadgeView.swift in Sources */,
 				76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,23 +7,35 @@
 
 import Foundation
 
+import Foundation
+
 class LocalStorage {
     static let shared = LocalStorage()
     private let formsKey = "savedForms"
 
-    func saveForm(_ form: ContactForm) throws {
+//    func clearOldData() {
+//        UserDefaults.standard.removeObject(forKey: formsKey)
+//    }
+
+    func saveForm(_ form: Report) throws {
         var forms = try loadForms()
-        if !forms.contains(where: { $0.id == form.id }) {
-            forms.append(form)
-            let data = try JSONEncoder().encode(forms)
-            UserDefaults.standard.set(data, forKey: formsKey)
-        }
+        forms.append(form)
+        let data = try JSONEncoder().encode(forms)
+        UserDefaults.standard.set(data, forKey: formsKey)
     }
 
-    func loadForms() throws -> [ContactForm] {
+    func loadForms() throws -> [Report] {
         guard let data = UserDefaults.standard.data(forKey: formsKey) else {
             return []
         }
-        return try JSONDecoder().decode([ContactForm].self, from: data)
+        return try JSONDecoder().decode([Report].self, from: data)
     }
+    func printSavedReports() {
+            do {
+                let reports = try loadForms()
+                print("Saved reports: \(reports)")
+            } catch {
+                print("Error loading reports: \(error)")
+            }
+        }
 }

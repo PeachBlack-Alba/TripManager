@@ -9,51 +9,55 @@ import Foundation
 import SwiftUI
 
 
+import Combine
+
+
+import SwiftUI
+import Combine
+
 struct ContactFormView: View {
-    @ObservedObject var viewModel: ContactFormViewModel
     @Binding var isPresented: Bool
+    @ObservedObject var viewModel: ContactFormViewModel
+    @State private var showAlert = false
 
     var body: some View {
-        Form {
-            Section(header: Text("Contact Information")) {
-                TextField("Name", text: $viewModel.form.name)
-                TextField("Surname", text: $viewModel.form.surname)
-                TextField("Email", text: $viewModel.form.email)
-                TextField("Phone", text: $viewModel.form.phone)
-            }
+        VStack {
+            // Add the form fields here
+            Text("Contact Form")
+                .font(.headline)
+            TextField("Name", text: $viewModel.name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Surname", text: $viewModel.surname)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Email", text: $viewModel.email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Phone", text: $viewModel.phone)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Details", text: $viewModel.details)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            DatePicker("Date", selection: $viewModel.date)
+                .padding()
 
-            Section(header: Text("Report Details")) {
-                DatePicker("Date", selection: $viewModel.form.reportDate, displayedComponents: [.date, .hourAndMinute])
-                TextEditor(text: $viewModel.form.description)
-                    .frame(height: 200)
-                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray))
-                    .onChange(of: viewModel.form.description) { newValue in
-                        if newValue.count > 200 {
-                            viewModel.form.description = String(newValue.prefix(200))
-                        }
+            Button("Save") {
+                viewModel.save()
+                showAlert = true
+            }
+            .disabled(viewModel.saveDisabled)
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Form Saved"),
+                    message: Text("Your form has been saved successfully."),
+                    dismissButton: .default(Text("OK")) {
+                        isPresented = false
                     }
-            }
-
-            Button(action: {
-                print("Button pressed - Submitting form: \(viewModel.form)")
-                viewModel.presenter?.submitForm(viewModel.form)
-            }) {
-                Text("Submit")
-                    .frame(maxWidth: .infinity)
-                    .contentShape(Rectangle())
+                )
             }
         }
-        .navigationBarTitle("Contact Form")
-        .onAppear {
-            viewModel.presenter?.viewDidLoad()
-        }
-        .alert(isPresented: $viewModel.showAlert) {
-            Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
-        }
-        .onChange(of: viewModel.formSubmitted) { submitted in
-            if submitted {
-                isPresented = false
-            }
-        }
+        .padding()
     }
 }
