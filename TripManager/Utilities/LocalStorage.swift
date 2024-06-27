@@ -12,10 +12,10 @@ import Foundation
 class LocalStorage {
     static let shared = LocalStorage()
     private let formsKey = "savedForms"
-
-//    func clearOldData() {
-//        UserDefaults.standard.removeObject(forKey: formsKey)
-//    }
+    //    Uncomment when clear data is necessary
+    //    func clearOldData() {
+    //        UserDefaults.standard.removeObject(forKey: formsKey)
+    //    }
 
     func saveForm(_ form: Report) throws {
         var forms = try loadForms()
@@ -31,11 +31,11 @@ class LocalStorage {
         return try JSONDecoder().decode([Report].self, from: data)
     }
     func printSavedReports() {
-            do {
-                let reports = try loadForms()
-                print("Saved reports: \(reports)")
-            } catch {
-                print("Error loading reports: \(error)")
-            }
+        do {
+            let reports = try loadForms()
+            print("Saved reports: \(reports)")
+        } catch {
+            print("Error loading reports: \(error)")
         }
+    }
 }

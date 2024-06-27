@@ -11,7 +11,7 @@ import SwiftUI
 
 struct StopInfoView: View {
     @ObservedObject var viewModel: MapViewModel
-
+    
     var body: some View {
         VStack {
             if let stopInfo = viewModel.stopInfo {
@@ -26,7 +26,7 @@ struct StopInfoView: View {
         }
         .padding()
     }
-
+    
     private func formattedDate(_ dateString: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

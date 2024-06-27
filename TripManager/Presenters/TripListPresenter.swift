@@ -32,7 +32,7 @@ extension TripListPresenter: TripListInteractorOutputProtocol {
     }
 
     func didFailToFetchTrips(error: Error) {
-        // TODO: Handle error
+        print("didFailToFetchTrips Error")
     }
     func didFetchStopInfo(_ stopInfo: StopInfo) {
         view?.updateStopInfo(stopInfo)

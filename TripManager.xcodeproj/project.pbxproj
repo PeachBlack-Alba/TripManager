@@ -38,15 +38,9 @@
 		764C698E2C28829C0077F29D /* TirpListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698D2C28829C0077F29D /* TirpListView.swift */; };
 		764C69902C28B3A60077F29D /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C698F2C28B3A60077F29D /* Report.swift */; };
 		764C69922C28B3BF0077F29D /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69912C28B3BF0077F29D /* ContactFormView.swift */; };
-		764C69942C28B3D60077F29D /* ContactFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69932C28B3D60077F29D /* ContactFormInteractor.swift */; };
-		764C69962C28B3F30077F29D /* ContactFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69952C28B3F30077F29D /* ContactFormPresenter.swift */; };
-		764C69992C28B4320077F29D /* ContactFormProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69982C28B4320077F29D /* ContactFormProtocols.swift */; };
 		764C699B2C28B4450077F29D /* ContactFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C699A2C28B4450077F29D /* ContactFormRouter.swift */; };
-		764C699D2C28B4600077F29D /* ContactFormViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C699C2C28B4600077F29D /* ContactFormViewWrapper.swift */; };
 		764C69A02C28C1390077F29D /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C699F2C28C1390077F29D /* LocalStorage.swift */; };
 		764C69A22C28C8BA0077F29D /* ContactFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69A12C28C8BA0077F29D /* ContactFormViewModel.swift */; };
-		764C69A42C28D4E90077F29D /* ContactFormViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */; };
-		76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B00BE02C298F790065FD24 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,15 +94,9 @@
 		764C698D2C28829C0077F29D /* TirpListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TirpListView.swift; sourceTree = "<group>"; };
 		764C698F2C28B3A60077F29D /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		764C69912C28B3BF0077F29D /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
-		764C69932C28B3D60077F29D /* ContactFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormInteractor.swift; sourceTree = "<group>"; };
-		764C69952C28B3F30077F29D /* ContactFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormPresenter.swift; sourceTree = "<group>"; };
-		764C69982C28B4320077F29D /* ContactFormProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormProtocols.swift; sourceTree = "<group>"; };
 		764C699A2C28B4450077F29D /* ContactFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormRouter.swift; sourceTree = "<group>"; };
-		764C699C2C28B4600077F29D /* ContactFormViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewWrapper.swift; sourceTree = "<group>"; };
 		764C699F2C28C1390077F29D /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		764C69A12C28C8BA0077F29D /* ContactFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewModel.swift; sourceTree = "<group>"; };
-		764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormViewContainer.swift; sourceTree = "<group>"; };
-		76B00BE02C298F790065FD24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +170,6 @@
 				764C69302C2425DB0077F29D /* TripManagerApp.swift */,
 				764C69342C2425DC0077F29D /* Assets.xcassets */,
 				764C69362C2425DC0077F29D /* Preview Content */,
-				76B00BE02C298F790065FD24 /* AppDelegate.swift */,
 			);
 			path = TripManager;
 			sourceTree = "<group>";
@@ -233,8 +220,6 @@
 				764C69742C24751E0077F29D /* MapView.swift */,
 				764C698D2C28829C0077F29D /* TirpListView.swift */,
 				764C69912C28B3BF0077F29D /* ContactFormView.swift */,
-				764C699C2C28B4600077F29D /* ContactFormViewWrapper.swift */,
-				764C69A32C28D4E90077F29D /* ContactFormViewContainer.swift */,
 				7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */,
 				7644A43E2C2DF7520077A8A6 /* BadgeView.swift */,
 			);
@@ -245,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				764C696A2C2442920077F29D /* TripListInteractor.swift */,
-				764C69932C28B3D60077F29D /* ContactFormInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -254,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				764C69662C243C310077F29D /* TripListPresenter.swift */,
-				764C69952C28B3F30077F29D /* ContactFormPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -316,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				764C69682C243C9B0077F29D /* TripListProtocols.swift */,
-				764C69982C28B4320077F29D /* ContactFormProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -471,26 +453,20 @@
 				764C69732C2474FB0077F29D /* MapViewModel.swift in Sources */,
 				764C696B2C2442920077F29D /* TripListInteractor.swift in Sources */,
 				764C69752C24751E0077F29D /* MapView.swift in Sources */,
-				764C69A42C28D4E90077F29D /* ContactFormViewContainer.swift in Sources */,
 				764C696D2C2443760077F29D /* TripsListRouter.swift in Sources */,
 				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,
 				764C69922C28B3BF0077F29D /* ContactFormView.swift in Sources */,
-				764C69942C28B3D60077F29D /* ContactFormInteractor.swift in Sources */,
 				7644A4242C2B09F40077A8A6 /* StopInfo.swift in Sources */,
 				764C69902C28B3A60077F29D /* Report.swift in Sources */,
 				764C69672C243C310077F29D /* TripListPresenter.swift in Sources */,
 				764C69A22C28C8BA0077F29D /* ContactFormViewModel.swift in Sources */,
-				764C699D2C28B4600077F29D /* ContactFormViewWrapper.swift in Sources */,
 				764C699B2C28B4450077F29D /* ContactFormRouter.swift in Sources */,
-				764C69992C28B4320077F29D /* ContactFormProtocols.swift in Sources */,
 				764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */,
 				764C696F2C244E0C0077F29D /* TripListViewWrapper.swift in Sources */,
-				764C69962C28B3F30077F29D /* ContactFormPresenter.swift in Sources */,
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
 				7644A4332C2B106D0077A8A6 /* TripListViewModel.swift in Sources */,
 				764C698E2C28829C0077F29D /* TirpListView.swift in Sources */,
 				7644A43F2C2DF7520077A8A6 /* BadgeView.swift in Sources */,
-				76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

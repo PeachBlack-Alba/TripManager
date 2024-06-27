@@ -44,7 +44,7 @@ class TripListViewWrapper: TripListViewProtocol, ObservableObject {
             self.mapViewModel.updatePolyline(for: trip)
         }
     }
-
+    
     func updateStopInfo(_ stopInfo: StopInfo) {
         DispatchQueue.main.async {
             self.mapViewModel.updateStopInfo(stopInfo: stopInfo)

@@ -14,13 +14,13 @@ class TripListRouter: TripListRouterProtocol {
         let presenter: TripListPresenterProtocol & TripListInteractorOutputProtocol = TripListPresenter()
         let interactor: TripListInteractorInputProtocol = TripListInteractor()
         let router: TripListRouterProtocol = TripListRouter()
-
+        
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
-
+        
         return AnyView(view.contentView)
     }
 }

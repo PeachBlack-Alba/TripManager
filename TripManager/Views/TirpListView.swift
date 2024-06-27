@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 import MapKit
 
-import SwiftUI
-import MapKit
 
 struct TripListView: View {
     @ObservedObject var viewModel: TripListViewWrapper
@@ -55,19 +53,19 @@ struct TripListView: View {
                     }) {
                         Image(systemName: "exclamationmark.bubble")
                     }
-                    BadgeView(count: formCount) // Display the badge count
+                    BadgeView(count: formCount)
                 })
                 .onAppear {
                     print("View: onAppear")
                     viewModel.presenter?.viewDidLoad()
-                    updateBadgeCount() // Update the badge count when the view appears
+                    updateBadgeCount()
                 }
                 .sheet(isPresented: $showContactForm, onDismiss: {
-                    updateBadgeCount() // Update the badge count when the contact form is dismissed
+                    updateBadgeCount()
                 }) {
                     ContactFormRouter.createContactFormModule(isPresented: $showContactForm, onSave: {
-                        showAlert = true // Show alert when the form is saved
-                        updateBadgeCount() // Update the badge count
+                        showAlert = true
+                        updateBadgeCount()
                     })
                 }
             }

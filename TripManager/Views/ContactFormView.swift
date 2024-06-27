@@ -22,7 +22,6 @@ struct ContactFormView: View {
 
     var body: some View {
         VStack {
-            // Add the form fields here
             Text("Contact Form")
                 .font(.headline)
             TextField("Name", text: $viewModel.name)

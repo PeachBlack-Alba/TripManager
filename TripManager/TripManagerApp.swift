@@ -14,18 +14,18 @@ import UserNotifications
 @main
 struct TripManagerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    
     init() {
         updateBadgeCount()
         // LocalStorage.shared.clearOldData()
     }
-
+    
     var body: some Scene {
         WindowGroup {
             TripListRouter.createTripListModule()
         }
     }
-
+    
     private func updateBadgeCount() {
         do {
             let forms = try LocalStorage.shared.loadForms()
@@ -49,7 +49,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         UNUserNotificationCenter.current().delegate = self
         return true
     }
-
+    
     private func checkNotificationSettings() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
@@ -66,11 +66,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             }
         }
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         updateBadgeCount()
     }
-
+    
     private func updateBadgeCount() {
         do {
             let forms = try LocalStorage.shared.loadForms()
