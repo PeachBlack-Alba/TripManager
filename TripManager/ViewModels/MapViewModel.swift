@@ -66,8 +66,17 @@ class MapViewModel: ObservableObject {
             guard let stopPoint = stop.point else { continue }
             let stopAnnotation = MKPointAnnotation()
             stopAnnotation.coordinate = CLLocationCoordinate2D(latitude: stopPoint.latitude, longitude: stopPoint.longitude)
-            stopAnnotation.title = "Stop name: \(stopInfo?.userName)"
-            newAnnotations.append(stopAnnotation)
+            if let stopInfo = self.stopInfo {
+                       stopAnnotation.title = "Passenger: \(stopInfo.userName)\n"
+                   } else {
+                       stopAnnotation.title = "Passenger: Unknown\nPrice: Unknown"
+                   }
+            if let stopInfo = self.stopInfo {
+                stopAnnotation.subtitle = " Price: \(stopInfo.price)"
+                   } else {
+                       stopAnnotation.subtitle = "Passenger: Unknown\nPrice: Unknown"
+                   }
+          newAnnotations.append(stopAnnotation)
         }
         annotations = newAnnotations
     }
@@ -85,7 +94,8 @@ class StopAnnotation: MKPointAnnotation {
         self.stop = stop
         super.init()
         self.coordinate = CLLocationCoordinate2D(latitude: stop.point.latitude, longitude: stop.point.longitude)
-        self.title = "Stop \(stop.address)"
+        self.title = ""
+        self.subtitle = ""
     }
 }
 
