@@ -16,7 +16,7 @@ struct TripListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                MapView(viewModel: viewModel.mapViewModel, selectedStopId: $selectedStopId)
+                MapView(viewModel: viewModel.mapViewModel)
                     .frame(height: UIScreen.main.bounds.height / 2)
                     .onTapGesture {
                         selectedStopId = nil
@@ -53,9 +53,6 @@ struct TripListView: View {
                 }
                 .sheet(isPresented: $viewModel.showContactForm) {
                     ContactFormRouter.createContactFormModule(isPresented: $viewModel.showContactForm)
-                }
-                .sheet(item: $selectedStopId) { stopId in
-                    StopInfoRouter.createModule(stopId: stopId.value)
                 }
             }
         }

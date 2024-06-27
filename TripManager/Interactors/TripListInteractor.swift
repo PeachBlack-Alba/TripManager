@@ -28,5 +28,18 @@ class TripListInteractor: TripListInteractorInputProtocol {
             }
         }
     }
+    func fetchStopInfo (){
+        networkService.fetchStopInfo { [weak self] result in
+            switch result{
+            case .success(let stopInfo ):
+                print("Interactor received stopInfo: \(stopInfo)")
+                self?.presenter?.didFetchStopInfo(stopInfo)
+            case .failure(let error):
+                print("Interactor error: \(error)")
+                self?.presenter?.didFailToFetchTrips(error: error)
+            }
+
+        }
+    }
 }
 

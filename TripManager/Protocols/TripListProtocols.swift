@@ -12,7 +12,7 @@ protocol TripListViewProtocol: AnyObject {
     var presenter: TripListPresenterProtocol? { get set }
     func showTrips(_ trips: [Trip])
     func showTripOnMap(_ trip: Trip)
-    func showStopInfo(stopId: Int)
+    func updateStopInfo(_ stopInfo: StopInfo)
 }
 
 protocol TripListPresenterProtocol: AnyObject {
@@ -27,13 +27,17 @@ protocol TripListPresenterProtocol: AnyObject {
 protocol TripListInteractorInputProtocol: AnyObject {
     var presenter: TripListInteractorOutputProtocol? { get set }
     func fetchTrips()
+    func fetchStopInfo()
 }
 
 protocol TripListInteractorOutputProtocol: AnyObject {
     func didFetchTrips(_ trips: [Trip])
     func didFailToFetchTrips(error: Error)
+    func didFetchStopInfo(_ stopInfo: StopInfo)
 }
 
 protocol TripListRouterProtocol: AnyObject {
     static func createTripListModule() -> AnyView
 }
+
+

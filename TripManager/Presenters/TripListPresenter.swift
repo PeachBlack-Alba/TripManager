@@ -14,6 +14,7 @@ class TripListPresenter: TripListPresenterProtocol {
 
     func viewDidLoad() {
         interactor?.fetchTrips()
+        interactor?.fetchStopInfo()
     }
 
     func didSelectTrip(_ trip: Trip) {
@@ -21,7 +22,7 @@ class TripListPresenter: TripListPresenterProtocol {
     }
 
     func didSelectStop(_ stopId: Int) {
-        view?.showStopInfo(stopId: stopId)
+        print("didSelectStop called")
     }
 }
 
@@ -32,5 +33,9 @@ extension TripListPresenter: TripListInteractorOutputProtocol {
 
     func didFailToFetchTrips(error: Error) {
         // TODO: Handle error
+    }
+    func didFetchStopInfo(_ stopInfo: StopInfo) {
+        view?.updateStopInfo(stopInfo)
+        print("didFetchStopInfo called")
     }
 }

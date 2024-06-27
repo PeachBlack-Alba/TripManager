@@ -10,7 +10,6 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     @ObservedObject var viewModel: MapViewModel
-    @Binding var selectedStopId: IdentifiableInt?
 
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -29,21 +28,20 @@ struct MapView: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self, selectedStopId: $selectedStopId)
-    }
+            Coordinator(self)
+        }
 
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
-        @Binding var selectedStopId: IdentifiableInt?
 
-        init(_ parent: MapView, selectedStopId: Binding<IdentifiableInt?>) {
+        init(_ parent: MapView) {
             self.parent = parent
-            self._selectedStopId = selectedStopId
         }
 
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
                 let renderer = MKPolylineRenderer(polyline: polyline)
+                //TODO: create a state for cancelled trips and change color
                 renderer.strokeColor = .blue
                 renderer.lineWidth = 4
                 return renderer
@@ -68,35 +66,32 @@ struct MapView: UIViewRepresentable {
             return annotationView
         }
 
-        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            if let annotation = view.annotation as? StopAnnotation {
-                selectedStopId = IdentifiableInt(value: annotation.stop.tripId)
-            }
-        }
 
-        private func createDetailView(for stop: StopInfo) -> UIView {
+
+
+        private func createDetailView(for stopInfo: StopInfo) -> UIView {
             let detailView = UIStackView()
             detailView.axis = .vertical
             detailView.alignment = .leading
 
             let userNameLabel = UILabel()
-            userNameLabel.text = "Passenger: \(stop.userName)"
+            userNameLabel.text = "Passenger: \(stopInfo.userName)"
             detailView.addArrangedSubview(userNameLabel)
 
             let timeLabel = UILabel()
-            timeLabel.text = "Time: \(stop.stopTime)"
+            timeLabel.text = "Time: \(stopInfo.stopTime)"
             detailView.addArrangedSubview(timeLabel)
 
             let addressLabel = UILabel()
-            addressLabel.text = "Address: \(stop.address)"
+            addressLabel.text = "Address: \(stopInfo.address)"
             detailView.addArrangedSubview(addressLabel)
 
             let paidLabel = UILabel()
-            paidLabel.text = "Paid: \(stop.paid ? "Yes" : "No")"
+            paidLabel.text = "Paid: \(stopInfo.paid ? "Yes" : "No")"
             detailView.addArrangedSubview(paidLabel)
 
             let priceLabel = UILabel()
-            priceLabel.text = "Price: \(stop.price)"
+            priceLabel.text = "Price: \(stopInfo.price)"
             detailView.addArrangedSubview(priceLabel)
 
             return detailView

@@ -39,7 +39,7 @@ class NetworkService {
         task.resume()
     }
 
-    func fetchStopInfo(completion: @escaping (Result<[StopInfo], Error>) -> Void) {
+    func fetchStopInfo(completion: @escaping (Result<StopInfo, Error>) -> Void) {
         let url = URL(string: "https://sandbox-giravolta-static.s3.eu-west-1.amazonaws.com/tech-test/stops.json")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -51,7 +51,7 @@ class NetworkService {
                 return
             }
             do {
-                let decodedStops = try JSONDecoder().decode([StopInfo].self, from: data)
+                let decodedStops = try JSONDecoder().decode(StopInfo.self, from: data)
                 completion(.success(decodedStops))
             } catch {
                 print("Decoding Error: \(error)")

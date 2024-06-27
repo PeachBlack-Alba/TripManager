@@ -8,28 +8,23 @@
 import Foundation
 import SwiftUI
 
-import Foundation
-import SwiftUI
 
 struct StopInfoView: View {
-    @ObservedObject var viewModel: StopInfoViewModel
+    @ObservedObject var viewModel: MapViewModel
 
     var body: some View {
         VStack {
-            if let stop = viewModel.stop {
-                Text("Passenger: \(stop.userName)")
-                Text("Address: \(stop.address)")
-                Text("Time: \(formattedDate(stop.stopTime))")
-                Text("Paid: \(stop.paid ? "Yes" : "No")")
-                Text("Price: \(stop.price)")
+            if let stopInfo = viewModel.stopInfo {
+                Text("Passenger: \(stopInfo.userName)")
+                Text("Address: \(stopInfo.address)")
+                Text("Time: \(formattedDate(stopInfo.stopTime))")
+                Text("Paid: \(stopInfo.paid ? "Yes" : "No")")
+                Text("Price: \(stopInfo.price)")
             } else if let error = viewModel.error {
                 Text("Error: \(error)")
             }
         }
         .padding()
-        .onAppear {
-            viewModel.onAppear()
-        }
     }
 
     private func formattedDate(_ dateString: String) -> String {

@@ -18,6 +18,21 @@ class MapViewModel: ObservableObject {
 
     @Published var polylines: [MKPolyline] = []
     @Published var annotations: [MKPointAnnotation] = []
+    @Published var stopInfo: StopInfo?
+    @Published var error: String?
+
+    func showStopInfo(_ stopInfo: StopInfo) {
+        DispatchQueue.main.async {
+            self.stopInfo = stopInfo
+        }
+    }
+
+    func showError(_ error: String) {
+        DispatchQueue.main.async {
+            self.error = error
+        }
+    }
+
 
     func updateRegion(for trip: Trip) {
         guard let coordinates = trip.decodedCoordinates else { return }
@@ -49,13 +64,17 @@ class MapViewModel: ObservableObject {
 
         for stop in trip.stops {
             guard let stopPoint = stop.point else { continue }
-          //  let stopAnnotation = StopAnnotation(stop: stop)
             let stopAnnotation = MKPointAnnotation()
             stopAnnotation.coordinate = CLLocationCoordinate2D(latitude: stopPoint.latitude, longitude: stopPoint.longitude)
-            stopAnnotation.title = "Stop \(stop.id ?? 0)"
+            stopAnnotation.title = "Stop name: \(stopInfo?.userName)"
             newAnnotations.append(stopAnnotation)
         }
         annotations = newAnnotations
+    }
+
+    func updateStopInfo(stopInfo: StopInfo){
+        self.stopInfo = stopInfo
+        print("updateStopInfo called")
     }
 }
 
@@ -66,8 +85,9 @@ class StopAnnotation: MKPointAnnotation {
         self.stop = stop
         super.init()
         self.coordinate = CLLocationCoordinate2D(latitude: stop.point.latitude, longitude: stop.point.longitude)
-        self.title = "Stop \(stop.id)"
+        self.title = "Stop \(stop.address)"
     }
 }
+
 
 

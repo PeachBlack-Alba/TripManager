@@ -13,7 +13,6 @@ class ContactFormPresenter: ContactFormPresenterProtocol, ContactFormInteractorO
     var router: ContactFormRouterProtocol?
 
     func viewDidLoad() {
-        // Implement any additional setup if needed
     }
 
     func submitForm(_ form: ContactForm) {

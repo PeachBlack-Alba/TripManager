@@ -8,15 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7644A4242C2B09F40077A8A6 /* StopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4232C2B09F40077A8A6 /* StopInfo.swift */; };
-		7644A4262C2B0C6F0077A8A6 /* StopInfoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4252C2B0C6F0077A8A6 /* StopInfoProtocols.swift */; };
-		7644A4282C2B0C8C0077A8A6 /* StopInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4272C2B0C8C0077A8A6 /* StopInfoInteractor.swift */; };
-		7644A42A2C2B0CAB0077A8A6 /* StopInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4292C2B0CAB0077A8A6 /* StopInfoPresenter.swift */; };
 		7644A42C2C2B0CC20077A8A6 /* StopInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */; };
-		7644A42F2C2B0D270077A8A6 /* StopInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A42E2C2B0D270077A8A6 /* StopInfoViewModel.swift */; };
-		7644A4312C2B0D480077A8A6 /* StopInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4302C2B0D480077A8A6 /* StopInfoRouter.swift */; };
 		7644A4332C2B106D0077A8A6 /* TripListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644A4322C2B106D0077A8A6 /* TripListViewModel.swift */; };
 		764C69312C2425DB0077F29D /* TripManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69302C2425DB0077F29D /* TripManagerApp.swift */; };
-		764C69332C2425DB0077F29D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69322C2425DB0077F29D /* ContentView.swift */; };
 		764C69352C2425DC0077F29D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764C69342C2425DC0077F29D /* Assets.xcassets */; };
 		764C69382C2425DC0077F29D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764C69372C2425DC0077F29D /* Preview Assets.xcassets */; };
 		764C69422C2425DD0077F29D /* TripManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764C69412C2425DD0077F29D /* TripManagerTests.swift */; };
@@ -73,16 +67,10 @@
 
 /* Begin PBXFileReference section */
 		7644A4232C2B09F40077A8A6 /* StopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfo.swift; sourceTree = "<group>"; };
-		7644A4252C2B0C6F0077A8A6 /* StopInfoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoProtocols.swift; sourceTree = "<group>"; };
-		7644A4272C2B0C8C0077A8A6 /* StopInfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoInteractor.swift; sourceTree = "<group>"; };
-		7644A4292C2B0CAB0077A8A6 /* StopInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoPresenter.swift; sourceTree = "<group>"; };
 		7644A42B2C2B0CC20077A8A6 /* StopInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoView.swift; sourceTree = "<group>"; };
-		7644A42E2C2B0D270077A8A6 /* StopInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoViewModel.swift; sourceTree = "<group>"; };
-		7644A4302C2B0D480077A8A6 /* StopInfoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopInfoRouter.swift; sourceTree = "<group>"; };
 		7644A4322C2B106D0077A8A6 /* TripListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListViewModel.swift; sourceTree = "<group>"; };
 		764C692D2C2425DB0077F29D /* TripManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764C69302C2425DB0077F29D /* TripManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripManagerApp.swift; sourceTree = "<group>"; };
-		764C69322C2425DB0077F29D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		764C69342C2425DC0077F29D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764C69372C2425DC0077F29D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		764C693D2C2425DD0077F29D /* TripManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +140,6 @@
 			children = (
 				764C69A12C28C8BA0077F29D /* ContactFormViewModel.swift */,
 				764C69722C2474FB0077F29D /* MapViewModel.swift */,
-				7644A42E2C2B0D270077A8A6 /* StopInfoViewModel.swift */,
 				7644A4322C2B106D0077A8A6 /* TripListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -191,7 +178,6 @@
 				764C695B2C2434F00077F29D /* Views */,
 				764C695A2C2434E70077F29D /* Models */,
 				764C69302C2425DB0077F29D /* TripManagerApp.swift */,
-				764C69322C2425DB0077F29D /* ContentView.swift */,
 				764C69342C2425DC0077F29D /* Assets.xcassets */,
 				764C69362C2425DC0077F29D /* Preview Content */,
 				76B00BE02C298F790065FD24 /* AppDelegate.swift */,
@@ -257,7 +243,6 @@
 			children = (
 				764C696A2C2442920077F29D /* TripListInteractor.swift */,
 				764C69932C28B3D60077F29D /* ContactFormInteractor.swift */,
-				7644A4272C2B0C8C0077A8A6 /* StopInfoInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -267,7 +252,6 @@
 			children = (
 				764C69662C243C310077F29D /* TripListPresenter.swift */,
 				764C69952C28B3F30077F29D /* ContactFormPresenter.swift */,
-				7644A4292C2B0CAB0077A8A6 /* StopInfoPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -277,7 +261,6 @@
 			children = (
 				764C696C2C2443760077F29D /* TripsListRouter.swift */,
 				764C699A2C28B4450077F29D /* ContactFormRouter.swift */,
-				7644A4302C2B0D480077A8A6 /* StopInfoRouter.swift */,
 			);
 			path = "Routers ";
 			sourceTree = "<group>";
@@ -331,7 +314,6 @@
 			children = (
 				764C69682C243C9B0077F29D /* TripListProtocols.swift */,
 				764C69982C28B4320077F29D /* ContactFormProtocols.swift */,
-				7644A4252C2B0C6F0077A8A6 /* StopInfoProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -488,16 +470,13 @@
 				764C69752C24751E0077F29D /* MapView.swift in Sources */,
 				764C69A42C28D4E90077F29D /* ContactFormViewContainer.swift in Sources */,
 				764C696D2C2443760077F29D /* TripsListRouter.swift in Sources */,
-				764C69332C2425DB0077F29D /* ContentView.swift in Sources */,
 				764C69632C2438F10077F29D /* NetworkService.swift in Sources */,
 				764C69922C28B3BF0077F29D /* ContactFormView.swift in Sources */,
 				764C69942C28B3D60077F29D /* ContactFormInteractor.swift in Sources */,
-				7644A42A2C2B0CAB0077A8A6 /* StopInfoPresenter.swift in Sources */,
 				7644A4242C2B09F40077A8A6 /* StopInfo.swift in Sources */,
 				764C69902C28B3A60077F29D /* ContactForm.swift in Sources */,
 				764C69672C243C310077F29D /* TripListPresenter.swift in Sources */,
 				764C69A22C28C8BA0077F29D /* ContactFormViewModel.swift in Sources */,
-				7644A4262C2B0C6F0077A8A6 /* StopInfoProtocols.swift in Sources */,
 				764C699D2C28B4600077F29D /* ContactFormViewWrapper.swift in Sources */,
 				764C699B2C28B4450077F29D /* ContactFormRouter.swift in Sources */,
 				764C69992C28B4320077F29D /* ContactFormProtocols.swift in Sources */,
@@ -507,10 +486,7 @@
 				764C69692C243C9B0077F29D /* TripListProtocols.swift in Sources */,
 				7644A4332C2B106D0077A8A6 /* TripListViewModel.swift in Sources */,
 				764C698E2C28829C0077F29D /* TirpListView.swift in Sources */,
-				7644A4312C2B0D480077A8A6 /* StopInfoRouter.swift in Sources */,
-				7644A4282C2B0C8C0077A8A6 /* StopInfoInteractor.swift in Sources */,
 				76B00BE12C298F790065FD24 /* AppDelegate.swift in Sources */,
-				7644A42F2C2B0D270077A8A6 /* StopInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
