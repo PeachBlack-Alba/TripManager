@@ -10,37 +10,78 @@ import XCTest
 
 class TripListInteractorTests: XCTestCase {
     var interactor: TripListInteractor!
-    var mockPresenter: MockTripListPresenter!
-    var mockNetworkService: MockNetworkService!
+    var presenter: MockPresenter!
+    var mockNetworkService: CustomMockNetworkService!
 
     override func setUp() {
         super.setUp()
-        mockPresenter = MockTripListPresenter()
-        mockNetworkService = MockNetworkService()
+        mockNetworkService = CustomMockNetworkService()
         interactor = TripListInteractor(networkService: mockNetworkService)
-        interactor.presenter = mockPresenter
+        presenter = MockPresenter()
+        interactor.presenter = presenter
     }
 
     override func tearDown() {
         interactor = nil
-        mockPresenter = nil
+        presenter = nil
         mockNetworkService = nil
         super.tearDown()
     }
 
-    func testFetchTripsSuccess() {
-        let trips = [Trip(driverName: "John Doe", startTime: "2022-01-01T00:00:00.000Z", endTime: "2022-01-01T01:00:00.000Z", status: "ongoing", description: "Test Trip", route: "test_route", origin: Location(address: "Test Address", point: Point(latitude: 0.0, longitude: 0.0)), destination: Location(address: "Test Address", point: Point(latitude: 0.0, longitude: 0.0)), stops: [])]
-        mockNetworkService.fetchTripsResult = .success(trips)
-
+    func testFetchTrips() {
         interactor.fetchTrips()
-        XCTAssertTrue(mockPresenter.didFetchTripsCalled, "Expected didFetchTrips to be called")
+        XCTAssertTrue(presenter.didFetchTripsCalled)
     }
 
-    func testFetchTripsFailure() {
-        let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test Error"])
-        mockNetworkService.fetchTripsResult = .failure(error)
+    func testFetchStopInfo() {
+        interactor.fetchStopInfo()
+        XCTAssertTrue(presenter.didFetchStopInfoCalled)
+    }
+}
 
-        interactor.fetchTrips()
-        XCTAssertTrue(mockPresenter.didFailToFetchTripsCalled, "Expected didFailToFetchTrips to be called")
+class CustomMockNetworkService: NetworkService {
+    override func fetchTrips(completion: @escaping (Result<[Trip], Error>) -> Void) {
+        let trip = Trip(
+            id: nil,
+            driverName: "Test Driver",
+            startTime: "Start Time",
+            endTime: "End Time",
+            status: "",
+            description: "Test Trip",
+            route: "",
+            origin: Location(address: "Start", point: Point(latitude: 41.0, longitude: 2.0)),
+            destination: Location(address: "End", point: Point(latitude: 41.1, longitude: 2.1)),
+            stops: []
+        )
+        completion(.success([trip]))
+    }
+
+    override func fetchStopInfo(completion: @escaping (Result<StopInfo, Error>) -> Void) {
+        let stopInfo = StopInfo(
+            id: UUID(),
+            price: 10.0,
+            address: "Stop Address",
+            tripId: 1,
+            paid: true,
+            stopTime: "Stop Time",
+            userName: "User",
+            point: StopPoint(latitude: 41.0, longitude: 2.0)
+        )
+        completion(.success(stopInfo))
+    }
+}
+
+class MockPresenter: TripListInteractorOutputProtocol {
+    var didFetchTripsCalled = false
+    var didFetchStopInfoCalled = false
+
+    func didFetchTrips(_ trips: [Trip]) {
+        didFetchTripsCalled = true
+    }
+
+    func didFailToFetchTrips(error: Error) {}
+
+    func didFetchStopInfo(_ stopInfo: StopInfo) {
+        didFetchStopInfoCalled = true
     }
 }

@@ -45,7 +45,7 @@ struct TripListView: View {
                         viewModel.presenter?.didSelectTrip(trip)
                     }
                 }
-                .navigationBarTitle("Trips")
+                .navigationBarTitle("Trip Manager")
                 .navigationBarItems(trailing: HStack {
                     Button(action: {
                         print("Contact form button tapped")

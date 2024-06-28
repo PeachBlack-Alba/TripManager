@@ -67,14 +67,14 @@ class MapViewModel: ObservableObject {
             let stopAnnotation = MKPointAnnotation()
             stopAnnotation.coordinate = CLLocationCoordinate2D(latitude: stopPoint.latitude, longitude: stopPoint.longitude)
             if let stopInfo = self.stopInfo {
-                stopAnnotation.title = "Passenger: \(stopInfo.userName)\n"
+                stopAnnotation.title = "Driver Name: \(stopInfo.userName)\n"
             } else {
-                stopAnnotation.title = "Passenger: Unknown\nPrice: Unknown"
+                stopAnnotation.title = "Driver Name: Unknown\nPrice: Unknown"
             }
             if let stopInfo = self.stopInfo {
                 stopAnnotation.subtitle = " Price: \(stopInfo.price)"
             } else {
-                stopAnnotation.subtitle = "Passenger: Unknown\nPrice: Unknown"
+                stopAnnotation.subtitle = "Price: Unknown\nPrice: Unknown"
             }
             newAnnotations.append(stopAnnotation)
         }

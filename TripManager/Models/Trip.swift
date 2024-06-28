@@ -42,3 +42,7 @@ struct Stop: Codable {
     let id: Int?
     let point: Point?
 }
+
+enum TripStatus: String, Codable {
+    case ongoing, completed, cancelled
+}
