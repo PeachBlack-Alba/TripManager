@@ -19,7 +19,7 @@ Features
 -   Display a list of trips with details such as driver name, start time, end time, and status.
 -   Show trip routes on a map.
 -   Display annotations for trip stops on the map.
--   Show detailed stop information, including passenger name, stop time, address, price, and payment status.
+-   Show detailed stop information, including passenger name and price.
 
 Installation
 ------------
@@ -28,10 +28,7 @@ To install and run this project locally, follow these steps:
 
 1.  **Clone the repository:**
 
-    bash
-
-    Copy code
-
+    
     `git clone https://github.com/yourusername/TripManager.git
     cd TripManager`
 
@@ -39,9 +36,6 @@ To install and run this project locally, follow these steps:
 
 3.  **Install dependencies:** Ensure you have Cocoapods installed, then run:
 
-    bash
-
-    Copy code
 
     `pod install`
 
@@ -57,7 +51,7 @@ Usage
 2.  **View Stop Information:**
 
     -   Tap on a stop annotation on the map to view detailed information about the stop.
-    -   Detailed information includes passenger name, stop time, address, price, and payment status.
+    -   Detailed information includes passenger name and price.
 
 Project Structure
 -----------------
